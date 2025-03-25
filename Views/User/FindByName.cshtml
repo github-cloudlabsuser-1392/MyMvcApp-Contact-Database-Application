@@ -1,0 +1,39 @@
+@model List<MyMvcApp.Models.User>
+
+@{
+    ViewData["Title"] = "Find By Name";
+}
+
+<h2>Find By Name</h2>
+
+<form asp-action="FindByName" method="get">
+    <input type="text" name="name" placeholder="Enter name to search" />
+    <button type="submit">Search</button>
+</form>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <!-- Add other columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                    <!-- Add other columns as needed -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No users found.</p>
+}
