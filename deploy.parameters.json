@@ -6,7 +6,7 @@
       "value": "myAppServicePlan"
     },
     "webAppName": {
-      "value": "myMvcApp"
+      "value": "MyMvcApp-Contact-Database-Application"
     }
   }
 }
